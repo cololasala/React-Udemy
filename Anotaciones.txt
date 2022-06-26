@@ -1,0 +1,90 @@
+En la carpeta bases se hizo repaso de Javascript
+React usa:
+JSX = Javascript + xml
+react trabaja en el background con Babel
+
+https://create-react-app.dev/
+https://es.reactjs.org/
+npx create-react-app 02-intro-javascript -> crea app react
+
+Fetch API nos permite hacer peticiones http sin ninguna otra libreria (viene incluida en javascript).
+
+02-intro-javascript, si se quiere probar algo se debe poner el codigo en el index.js
+se puede ejecutar directamente el codigo javascript con -> node "nombreArchivo.js"
+--------------------------------------------------------------------------------------------------------------
+Seccion 4 Primeros pasos en React counter-app
+
+Un componente es una pieza de codigo encapsulada que hace una funcion en especifico y puede tener estado o no. El estado es 
+como se encuentra la informacion del componente en punto determinado del tiempo.
+React permite crear 2 tipos de componentes: 1-basados en clase, 2-basados en funciones (esta ultima tiene mas popularidad hoy en dia)
+
+A traves de las properties podemos enviar info desde componente padre hacia el componente hijo.
+Con rafcp y presionando enter crea un functional component en un archivo.
+Un hook es una funcion, generalmente los definidos empiezan con la palabra "use" -> useEffect, useContext, etc. El useState retorna un array
+en donde es [variable, funcion], nosotros con la funcion podemos setear nuevos valores a nuestra variable. Se hizo un contador donde podemos 
+incrementar contador, decrementar o resetear.
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 5 Pruebas unitarias y de integracion
+
+https://jestjs.io/
+Pruebas unitarias: enfocadas en pequenas funcionalidades.
+Pruebas de integracion: enfocadas en como reaccionan varias pruebas en conjunto.
+En src de 03-counter-app en la carpeta base se pusieron archivos para hacer pruebas y se creo la carpeta tests. Se corre npm run test y se correran
+todos los archivos .test.js .Algo importante es que para correr los test no deberian haber console.log en los archivos a probar.
+Para probar solo un archivo a la vez se debe correr el test,luego tocar "q", luego tocar "w" , luego opcion "p" y busco el archivo elegido.
+Las pruebas unitarias por defecto son sincronas.
+
+Para las pruebas de PrimeraApp component primero se creo en la carpeta src el archivo "setupTests.js".
+https://enzymejs.github.io/enzyme/
+npm i --save-dev enzyme -> instalo enzyme
+en realidad se hizo con este (ya que aun no sale para react 17) -> https://github.com/wojtekmaj/enzyme-adapter-react-17
+npm install --save-dev enzyme-to-json -> este paquete pone mas lindo el formato del componente en la carpeta _snaphots_
+Se van a crear Snapshot y para actualizarlos pide que se ponga la letra "u", al correr una prueba.
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 6 Creacion de aplicacion GifExpertApp
+
+En esta seccion se explica llamadas a api, comunicacion entre componentes, uso de customHooks.
+
+https://es.reactjs.org/docs/faq-structure.html -> estructura de archivos de React
+https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76 -> estructura de folders
+
+para agregar elementos en un array de un useState, se debe hacer con el spread operator.
+Cuando envio al componente AddCategory setCategory estoy enviando la "referencia" a setCategory.
+useEffect es un hook que permite ejecutar codigo de manera condicional, tiene un array de dependencias (si esta vacio no dependera de nada).
+A GifItem paso {...img}, eso hace que se pase cada propiedad(id,title,url) como si fuera "independiente", entonces depues en las props del component
+puedo desestructurar y obtener esas props de manera separada.
+encodeURI resuelve algunas cosas como agregar el "%20" en las url.
+los helpers son funciones que hacen algo en especifico, pueden recibir argumentos, lo procesan y hacen un return.
+
+Hacer un Custom hook consiste en extraer logica de un componente para poder utilizarla nuevamente de manera sencilla. Se hizo uno en la carpeta hooks.
+Los useEffect, useContext,useState, etc no pueden ser async ya que esperan algo sincrono.
+https://animate.style/ -> animaciones css
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 7
+https://www.npmjs.com/package/http-server --> instalando este paquete y poniendo http-server -o levanta la app como si estuviera
+en un server
+
+El repo creado solo fue para la carpeta -> 04-gif-expert-app
+Se hicieron unas configuraciones para usar git Pages en GitHub. Se corrio npm run build y se cambio el nombre de la carpeta build por "docs".
+En el index de la carpeta docs se hizo un format para que quede bien el html y se pusieron bien las rutas a los href y src.
+Luego en gitHub se hiceron las configuraciones para usar git pages en "Settigs" y se puede acceder a esto -> https://cololasala.github.io/react-gif-expert-app/ 
+git remote remove origin -> para sacar el remote 
+git remote add origin https://github.com/cololasala/react-gif-expert-app.git -> setear el remote
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 8
+https://react-hooks-testing-library.com/ -> libreria util para testear hooks
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 9
+Un hook no puede ser creado de manera condicional, es decir no puede ponerse en un If por ejemplo y siempre deben estar en la parte
+mas arriba de nuestro componente.
+Cuando se crea un nuevo custom hook se debe empezar con "use".
+useEffect es un hook que nos permite ejecutar algun efecto secundario cuando ocurra algo en nuestro componente.
+En esta seccion se crearon los componentes con .jsx (aunque con .js funcionan igual)
+
+
+

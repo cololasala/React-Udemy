@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <!-- Carga React -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React app</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">  // babel hace la traduccion de un codigo moderno a un codigo soportado por cualquier navegador web
+    const root = document.querySelector("#root");
+    const nombre = "Luciano"
+    const h1Tag = <h1>Hola mundo, soy {nombre}</h1>; // parecido a interpolation
+    
+    ReactDOM.render(h1Tag, root);
+</script>
+
+</html>
