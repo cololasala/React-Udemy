@@ -1,6 +1,6 @@
 import React from "react";
-import { useFetch } from "../../hooks/useFetch";
-import { useCounter } from "../../hooks/useCounter";
+import { useFetch, useCounter } from "../../hooks";
+import { LoadingQuote, Quote } from "../03-examples";
 
 export const MultipleCustomHook = () => {
   const { state, increment, decrement, reset } = useCounter(1);
@@ -15,7 +15,7 @@ export const MultipleCustomHook = () => {
       <h1>Breaking bad quotes</h1>
       <hr />
 
-      {isLoading ? (
+      {/* {isLoading ? (      // codigo sin usar componentes 
         <div className="alert alert-info text-center">Loading...</div>
       ) : (
         <blockquote className="blockquote text-end">
@@ -26,6 +26,15 @@ export const MultipleCustomHook = () => {
 
       <button className="btn btn-primary" disabled={isLoading} onClick={increment}>
         Next quoute
+      </button> */}
+
+      {isLoading ? <LoadingQuote /> : <Quote author={author} quote={quote}/>}   {/* Usando componentes */}
+      <button
+        className="btn btn-primary"
+        disabled={isLoading}
+        onClick={increment}
+      >
+        Next quote
       </button>
     </>
   );

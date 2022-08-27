@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const useForm = (initialForm = {}) => {                  // inicio de form objeto vacio
     const [stateForm, setStateForm] = useState(initialForm);
 
-    const handleInputChange = ({ target }) => { // desestructuro el event
+    const handleInputChange = ({ target }) => { // desestructuro el event (obtengo el target)
         const { name, value } = target;
         setStateForm({
             ...stateForm,
-            [name]: value             // target name seria "name" o "email" (depende que input lo llame) y target value seria el valor propio del input
+            [name]: value             // target name seria "name" o "email" (depende de que input lo llame) y target value seria el valor propio del input
         })
     }
 

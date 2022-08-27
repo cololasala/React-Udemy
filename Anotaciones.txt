@@ -80,11 +80,53 @@ https://react-hooks-testing-library.com/ -> libreria util para testear hooks
 
 --------------------------------------------------------------------------------------------------------------
 Seccion 9
+
+En esta seccion se crearon los componentes con .jsx (aunque con .js funcionan igual)
 Un hook no puede ser creado de manera condicional, es decir no puede ponerse en un If por ejemplo y siempre deben estar en la parte
 mas arriba de nuestro componente.
 Cuando se crea un nuevo custom hook se debe empezar con "use".
 useEffect es un hook que nos permite ejecutar algun efecto secundario cuando ocurra algo en nuestro componente.
-En esta seccion se crearon los componentes con .jsx (aunque con .js funcionan igual)
+useRef es un hook que sirve para manejar valores de variables pero no realiza renderizaciones luego de un cambio.
+useLayoutEffect es muy parecido al useEffect solo que se dispara cuando se terminan todas la mutaciones del DOM.
+memo es una funcion de react que hace que se memorice el componente, en nuestro ejemplo evitaba que se vuelva a dibujar el componente.
+(Falta ultima tarea del ultimo video).
 
+--------------------------------------------------------------------------------------------------------------
+Seccion 10 (Reducer y useReducer)
 
+Un Reducer es una funcion, usualmente recibe dos argumentos, el estado incial y la accion que quiero ejecutar. Se considera una funcion pura
+es decir, no debe tener efectos secundarios, debe resolver todo lo que pide, tampoco debe tener tareas asincronas y siempre debe retornar un 
+nuevo estado, no debe llamar al localStorage o sessionStorage.
 
+El useReducer es muy parecido al useState pero es mas utilizado cuando existen muchas acciones que pueden modificar el state de nuestra
+app.
+
+En esta seccion creamos un useTodos, dentro del mismo usamos toda la logica, tenemos el Reducer llamado todoReducer que maneja la logica de las cosas
+que puedo hacer con las tareas (agregar, eliminar o poner como completada), tenemos el initialState que es un array vacio y una funcion init inicializadora
+en donde preguntamos si en el localStorage tenemos ya data cargada.
+Tambien usamos useEffect a para controlas el localStorage.
+
+VER CUANDO ES UNA FUNCION CON PARENTESIS -> { funcion() } O SIN -> { funcion }
+Para llamar a una funcion en html es con parentesis (la funcion esta en el mismo archivo por ejemplo) -> { funcion() }
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 11 (useContext)
+
+useContext permite una comunicacion entre componentes sin usar las properties, un buen ejemplo es cuando necesito pasar info
+desde el abuelo al padre y del padre al nieto.
+
+Nuestro Context va a estar en un nivel superior y servira de contenedor de informacion que les va a permitir a los componentes
+hijos de el poder leer y ejecutra metodos que se encuentren dentro del Context.
+
+Se instalo react-reouter-dom -> npm install react-router-dom@6
+BrowserRouter es un higher order component, es decir, es un componenent que recibe otros componentes dentro de el. Todos los componentes
+dentro de el tendran acceso a su info.
+
+Se creo un UserProvider que es el provee la info que sera utilizada en los componentes hijos.
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 12 (pruebas unitarias de hooks y custom hooks)
+
+Se siguio esta guia de instalacion -> https://gist.github.com/Klerith/ca7e57fae3c9ab92ad08baadc6c26177
+Para hacer test de hooks usamos renderHook.
+Para hacer test de fetch necesitamos data y para eso usamos jest.mock

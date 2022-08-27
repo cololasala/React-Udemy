@@ -13,7 +13,7 @@ export const Message = () => {
         window.addEventListener('mousemove', mouseMove);    // evento de movimiento de mouse, cuando mueve va a la funcion mouseMove
 
         return () => {
-            console.log("componente Message desmontado");
+            console.log("componente Message desmontado");       // en este return nos sirve para hacer "limpieza" de algo, en este caso remuevo el eventListener
             window.removeEventListener('mousemove', mouseMove);
         }
     }, [])

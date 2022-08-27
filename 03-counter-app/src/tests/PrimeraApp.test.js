@@ -31,7 +31,7 @@ describe('Prueba <PrimeraApp/>', () => {
             subtitulo={subtitulo}/>
         );
 
-        const textoParrafo = wrapper.find('#sub').text();             // esto funciona igual que el querySelector, en este caso obtengo el texto del de la etiqueta que tiene ese id
+        const textoParrafo = wrapper.find('#sub').text();             // esto funciona igual que el querySelector, en este caso obtengo el texto de la etiqueta que tiene ese id
        
         expect(textoParrafo).toBe(subtitulo);
     })

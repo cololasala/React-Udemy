@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const useCounter = (initialState = 10) => {  // si no paso nada se inicializa por defecto con 10
     const [state, setState] = useState(initialState);
 
-    const increment = () => {
-        setState(state + 1);
+    const increment = (value = 1) => {
+        setState((current) => current + value);
     }
 
     const decrement = (factor = 1) => {
-        setState(state - factor);
+        setState((current) => current - factor);
     }
 
     const reset = () => {
