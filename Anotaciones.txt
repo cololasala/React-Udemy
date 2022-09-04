@@ -130,3 +130,17 @@ Seccion 12 (pruebas unitarias de hooks y custom hooks)
 Se siguio esta guia de instalacion -> https://gist.github.com/Klerith/ca7e57fae3c9ab92ad08baadc6c26177
 Para hacer test de hooks usamos renderHook.
 Para hacer test de fetch necesitamos data y para eso usamos jest.mock
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 14 (SPA, simple page application)
+
+El barrel se crea primero en las subcarpetas, y luego se crea el principal de la carpeta. Por ejemplo en la carpeta "ui",
+primero se crea un barrel en la carpeta components, luego en la carperta ui y si quiero usar el navbar se importa asi ->
+import  { NavBar } from '../ui'
+Si por ejemplo se siguen agregando cosas, solo se deben updatear los barrels.
+useNavigate es un custom hook creado para facilitar ciertas cosas del manejo de rutas (por ejemplo hacer navegacion).
+
+Se instalo el paquete -> npm add query-string , que se usa en Search.jsx psara poder manejar mejor los queries parameters.
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 15 (Proteccion de rutas)
