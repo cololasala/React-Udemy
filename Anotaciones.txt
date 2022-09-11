@@ -144,3 +144,14 @@ Se instalo el paquete -> npm add query-string , que se usa en Search.jsx psara p
 
 --------------------------------------------------------------------------------------------------------------
 Seccion 15 (Proteccion de rutas)
+
+En esta seccion se usara Context para tener contexto acerca de las rutas cuando manejo la autenticacion.
+El AuthProvider utiliza el AuthContext para proveer la info a toda la app. El AuthProvider tambien usa useReducer.
+Para hacer rutas privadas se hace que una ruta envuelva a otras rutas "hijas". En la app hicimos como privadas las rutas cuando
+estamos dentro de la app ("marvel", "dc", etc), y pusimos como "publicas" a las del login.
+
+useLocation() obtiene info de la ruta actual, lo usamos para "recordar" la ultima pagina antes de hacer logout, de manera de que
+si hacemos login otra vez volvemos a la ultima pagina donde estabamos antes.
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 16 (Pruebas de Heroes App y rutas)

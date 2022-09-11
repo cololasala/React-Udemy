@@ -1,11 +1,16 @@
-import { NavLink, Link, useNavigate } from "react-router-dom"
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../auth";
 
 export const NavBar = () => {
     const navigate = useNavigate();  // parecido al router de angular
-    const logout = () => {
+    const { user, logout } = useContext(AuthContext)
+    const onLogout = () => {
         navigate('/login', {
             replace: true   // permite evitar que se pueda volver a traves de las flechas de navegacion de chrome (anda en modo incognito)
-        });   
+        });
+
+        logout();
     }
   return (
     <>
@@ -46,8 +51,8 @@ export const NavBar = () => {
 
             <div className="d-flex justify-content-end navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    <span className="nav-item nav-link text-primary">Luciano</span>
-                    <button className="nav-item nav-link btn" onClick={ logout } >Logout</button>
+                    <span className="nav-item nav-link text-primary">{ user?.name }</span>
+                    <button className="nav-item nav-link btn" onClick={ onLogout } >Logout</button>
                 </ul>
             </div>
         </nav>
