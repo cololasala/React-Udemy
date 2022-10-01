@@ -8,12 +8,12 @@ describe('Pruebas sobre AuthReducer', () => {
         const action = {
             type: '',
         }
-       const state = authReducer({}, action);
+        const state = authReducer({}, action);
 
-       expect(state).toEqual({})
-     });
+        expect(state).toEqual({})
+    });
 
-     test('debe (login) llamar al login, autenticar y poner logged en true', () => {
+    test('debe (login) llamar al login, autenticar y poner logged en true', () => {
         const action = {
             type: types.login,
             payload: {
@@ -30,11 +30,11 @@ describe('Pruebas sobre AuthReducer', () => {
         expect(state).toEqual({
             logged: true,
             user: action.payload
-        })
+        });
 
-     });
+    });
 
-     test('debe de (logout) borrar el nombre de usuario y poner logged en false', () => {
+    test('debe de (logout) borrar el nombre de usuario y poner logged en false', () => {
         const action = {
             type: types.logout,
             payload: {
@@ -42,10 +42,8 @@ describe('Pruebas sobre AuthReducer', () => {
                 name: 'Luciano'
             }
         }
-        const state = authReducer({logged: true}, action);
+        const state = authReducer({ logged: true }, action);
 
         expect(state.logged).toBeFalsy();
-
-
     });
- })
+})

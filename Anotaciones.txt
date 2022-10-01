@@ -155,3 +155,13 @@ si hacemos login otra vez volvemos a la ultima pagina donde estabamos antes.
 
 --------------------------------------------------------------------------------------------------------------
 Seccion 16 (Pruebas de Heroes App y rutas)
+.
+.
+. se deja mitad para despues
+--------------------------------------------------------------------------------------------------------------
+Seccion 17 (MarialUI, estructura y diseño)
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 18 (Redux)
+Es una forma de mantener el estado de mi app.
+Store -> es la fuente de mi informacion, los componentes lo consumiran

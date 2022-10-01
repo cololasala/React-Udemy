@@ -9,7 +9,7 @@ export const TodoApp = () => {
   return (
     <>
       <h1>
-        Todo list: {todosCount} <small>pendings: {pendingsTodos}</small>
+        Todo list: {todosCount} <small>pendings: {pendingsTodos()}</small>
       </h1>
       <hr />
 
