@@ -161,7 +161,14 @@ Seccion 16 (Pruebas de Heroes App y rutas)
 --------------------------------------------------------------------------------------------------------------
 Seccion 17 (MarialUI, estructura y diseño)
 
+Se instalo -> https://mui.com/
+
+Las pages son cosas que cubren toda la pantalla. Las views serian las cosas dentro de una page.
+Box es como un div, y Grid permite definir elementos internamente.
+
 --------------------------------------------------------------------------------------------------------------
 Seccion 18 (Redux)
-Es una forma de mantener el estado de mi app.
+Es una forma de mantener el estado de mi app. Ayuda a que la actulizacion de la informacion siempre se realice a traves
+una sola via predecible, con el objetivo de prevenir cambios accidentales en la info.
+
 Store -> es la fuente de mi informacion, los componentes lo consumiran
