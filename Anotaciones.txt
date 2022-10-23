@@ -171,4 +171,27 @@ Seccion 18 (Redux)
 Es una forma de mantener el estado de mi app. Ayuda a que la actulizacion de la informacion siempre se realice a traves
 una sola via predecible, con el objetivo de prevenir cambios accidentales en la info.
 
-Store -> es la fuente de mi informacion, los componentes lo consumiran
+Store -> es la fuente de mi informacion, los componentes lo consumiran. El store tiene su propio state.
+Dentro del store la accion es recibida por un dispatcher. Del dispatcher va al conjunto de Reducers(por ejmplo 1 reducer es
+para autenticar, 1 reducer para manejar tareas pendientes, 1 reducer para manejar otra cosa, etc).
+Dentro del dispatcher se tiene un middleware que se encarga de manejar las peticiones asincronicas.
+
+Usamos Redux toolkit -> https://redux-toolkit.js.org/ , para implementar redux en nuestra app.
+-> npm install @reduxjs/toolkit react-redux
+
+Slice -> es una funcion que recibe un objeto, se tiene un nombre identificador, un estado inicial y reducers.
+Se hizo una pequeña logica para crear un snippet,de manera que al escribir redux-slice en un archivo y apretar Tab se
+crea un template de un slice.
+
+Crear snippet -> control, shift y p, y se elige la opcion "Snippets configure user snippets"
+
+Thunks -> es una accion asincrona que dispara otra accion cuando se resuelve esa accion asincrona.
+Pokemon api -> https://pokeapi.co/
+Se instalo axios -> npm i axios
+
+RTK Query -> es una pieza interna de Redux, que tambien esta en Redux toolkit, que sirve para realizar peticiones como axios.
+No es en si "un reemplazo de axios", sino que nos sirve para evitar traer info duplicada si ya la tenemos en cache de nuestra app
+
+--------------------------------------------------------------------------------------------------------------
+Seccion 19 (Redux y Firebase)
+
